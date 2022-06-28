@@ -1,16 +1,26 @@
-const subtrair = document.querySelector("#subtrair")
-const somar = document.querySelector("#somar")
 
-const arm = document.querySelector("#arm")
 
-somar.addEventListener("click", (e) => {manipulaDados("somar")})
+const controle = document.querySelectorAll(".controle-ajuste")
 
-subtrair.addEventListener("click", (e) => {manipulaDados("subtrair")})
+
+
+
+controle.forEach((e) => {
+    e.addEventListener("click", (e) => {
+        manipulaDados(e.target.textContent);
+        console.log(e.target.parentNode);
+    })
+});
+
+
 
 function manipulaDados(operacao) {
-    if (operacao === 'subtrair') {
-        arm.value = parseInt(arm.value) - 1;
+
+const peca = document.querySelector(".controle-contador ")
+    
+    if (operacao === '-') {
+        peca.value = parseInt(peca.value) - 1;
     } else {
-       arm.value = parseInt(arm.value) + 1; 
+        peca.value = parseInt(peca.value) + 1;
     }
 }
